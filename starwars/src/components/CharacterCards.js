@@ -8,26 +8,28 @@ const CharProfile = styled.div`
     flex-direction: column;
     margin: 20px; 
     background: rgba(208, 217, 226, 0.8);
+    :hover{
+        transform: scale(1.2);
+    }
 `;
-const ProfileTitle = styled.h1`
+const ProfileTitle = styled.h2`
     font-size: 24px;
-    padding: 10px;
+    padding-top: 5px;
 `;
 const ProfileText = styled.p`
-    font-size: 12px;
-    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 10px;
+    line-height: .2;
 `;
-// const ProfilePic = styled.img`
-//     width: 100%;
-//     height: 40%;
-//     object-fit: cover;
-// `;
 
 const CharacterCards = props => {
     return(
         <CharProfile key={props.id}>
             <ProfileTitle>{props.name}</ProfileTitle>
-            <ProfileText>{props.birth}</ProfileText>
+            <ProfileText>Mass: {props.mass}</ProfileText>
+            <ProfileText>Height: {props.height}</ProfileText>
+            <ProfileText>Birth Year:{props.birth}</ProfileText>
         </CharProfile>
     )
 }

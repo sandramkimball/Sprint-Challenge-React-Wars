@@ -26,17 +26,17 @@ function Characters(){
           });
       }, [])
 
-
-
     return (
         <div>
-            <h1>Testing Characters</h1>
+            <h1>Characters</h1>
             <CardContainer>
                 {charProfile.map(item=>{
                     return <CharacterCards
                     key={item}
-                    name={charProfile.name}
-                    birth={charProfile.birth_year}/>
+                    name={item.name}
+                    mass={item.mass}
+                    height={item.height}
+                    birth={item.birth_year}/>
                 })}
             </CardContainer>
         </div>

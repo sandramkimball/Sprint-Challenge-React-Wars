@@ -1,43 +1,36 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import CharacterCards from './CharacterCards';
-
+// import findCharPlanet from './Homeworld';
 
 
 function Characters(){
-    const [charList, setChar] = useState([]);
-    const [charPlanet, setPlanet] = useState([]);
+    const [charProfile, setChar] = useState([]);
 
     useEffect(()=> {
-        axios.get('https://swapi.co/api/people/5')
+        axios.get('https://swapi.co/api/people/')
         .then(response=>{
-            const charList = response.data;
-            const charPlanet = response.data.homeworld;
+            const charList = response.data.results;
             console.log('Characters: ', charList)
             setChar(charList);
 
-            // console.log('Character Planet: ', charPlanet)
-            // setPlanet(charPlanet);
-        });
-    }, []);
+        })
+        .catch(error => {
+            console.log("ERGH!", error);
+          });
+      }, [])
 
-    useEffect(()=> {
-        axios.get(charPlanet)
-        .then(response=>{
-            const charPlanet = response.data;
-            console.log('Character Planet: ', charPlanet)
-            setPlanet(charPlanet);
-        });
-    }, []);
 
 
     return (
         <div className='charList'>
             <h1>Testing Characters</h1>
-            <CharacterCards
-                name={charList.name}
-                homeworld={charPlanet.name}
-                birth={charList.birth_year}/>
+            {charProfile.map(item=>{
+                return <CharacterCards
+                key={item}
+                name={charProfile.name}
+                birth={charProfile.birth_year}/>
+            })}
         </div>
     );
 }

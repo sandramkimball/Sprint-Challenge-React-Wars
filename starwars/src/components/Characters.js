@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import CharacterCards from './CharacterCards';
-// import findCharPlanet from './Homeworld';
+import styled from 'styled-components';
+
+const CardContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+`;
 
 
 function Characters(){
@@ -23,14 +29,16 @@ function Characters(){
 
 
     return (
-        <div className='charList'>
+        <div>
             <h1>Testing Characters</h1>
-            {charProfile.map(item=>{
-                return <CharacterCards
-                key={item}
-                name={charProfile.name}
-                birth={charProfile.birth_year}/>
-            })}
+            <CardContainer>
+                {charProfile.map(item=>{
+                    return <CharacterCards
+                    key={item}
+                    name={charProfile.name}
+                    birth={charProfile.birth_year}/>
+                })}
+            </CardContainer>
         </div>
     );
 }

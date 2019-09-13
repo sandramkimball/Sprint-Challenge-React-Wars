@@ -25,14 +25,19 @@ In this challenge, create a web page that presents a styled list of Star Wars ch
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
+    -ReactJS simplifies the data onload. It updates only what needs to be updated versus refreshing and reloading the entire site or data structure. It's very specific, saving time and energy.
 
 - [ ] What does it mean to _think_ in react?
+    -Think specifically. Orginization. Imports. What structure do I need to build and components will I need?
 
 - [ ] Describe state.
+    -The state of an element, which can be set to a constantly updating slice of data.
 
 - [ ] Describe props.
+    -Kinda like a placeholder used to take in info and pass it on.
 
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+    -Anything that happens outside a main function's body.
 
 ## Project Set Up
 

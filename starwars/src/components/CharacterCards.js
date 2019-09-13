@@ -10,6 +10,7 @@ const CharProfile = styled.div`
     background: rgba(208, 217, 226, 0.8);
     :hover{
         transform: scale(1.2);
+        background: #fff;
     }
 `;
 const ProfileTitle = styled.h2`
@@ -30,6 +31,7 @@ const CharacterCards = props => {
             <ProfileText>Mass: {props.mass}</ProfileText>
             <ProfileText>Height: {props.height}</ProfileText>
             <ProfileText>Birth Year:{props.birth}</ProfileText>
+            <ProfileText>Home Planet:{props.homeplanet}</ProfileText>
         </CharProfile>
     )
 }

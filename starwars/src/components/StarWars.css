@@ -1,0 +1,11 @@
+.card-container p{
+    font-family: 'Teko', sans-serif;
+}
+
+.card-container h1, h2{
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+.card-container h1{
+    font-size: 40px;
+}
